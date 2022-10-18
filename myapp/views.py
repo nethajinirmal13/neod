@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .models import *
 
 # Create your views here.
@@ -28,4 +28,9 @@ def InsertData(request):
 
 
     #after insertion to redit to show.html
-    return render(request,"myapp/show.html")
+   # return render(request,"myapp/show.html")
+    return redirect('showdata')
+
+def ShowData(request):
+    dir_data=Student.objects.all()
+    return render(request,"myapp/showdata.html",{'key1':dir_data})

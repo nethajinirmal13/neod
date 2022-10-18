@@ -5,4 +5,5 @@ urlpatterns = [
     path("forms/",views.htmlform,name="htmlform"),
     path("insert/",views.InsertPageView,name="insertpage"),
     path("insertdata/",views.InsertData,name="insertdata"),
+    path("showdata/",views.ShowData,name="showdata"),
 ]
