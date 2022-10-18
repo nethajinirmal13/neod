@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf import settings
-from django.conf.urls.static import static#for heroku
+#from django.conf.urls.static import static#for heroku
 from django.views.static import serve#for heroku
 from django.conf.urls import url#for heroku
 
@@ -24,6 +24,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include('myapp.urls')),#neo- application included in django project
     url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), #included for hosting
-    url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), #included for hosting
+   # url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), #included for hosting
 ]
 
